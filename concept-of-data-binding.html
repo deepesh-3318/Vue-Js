@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Start the VueJS Learning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .fixedsize img {
+            width: 200px;
+        }
+    </style>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+</head>
+
+<body>
+
+    <div id="data-binding">
+        {{Name}}
+
+        <br>
+        <br>
+        <br>
+
+
+        <a v-bind:href="link" v-bind:title="title">
+            {{ Name }}
+        </a>
+
+        <br>
+        <br>
+        <br>
+        <a v-bind:href="imgSrc" v-bind:title="title"> <!-- Added the href line and dinamic img url -->
+            <img v-bind:src="imgSrc" alt="">
+        </a>
+
+        <br>
+        <br>
+        <br>
+
+        <div v-bind:class="{fixedsize:IsActveTrue}"> <!-- Control the html class with Vue Data binding -->
+            <img v-bind:src="imgSrc" v-bind:alt="title">
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <form method="POST"> <!-- We're controling the form tag values baise on the Vue Js -->
+            <input v-bind:type="inputTypeText" v-bind:value="inputName" v-bind:placeholder="inputTypeText" />
+            <br /><br />
+
+            <input v-bind:type="inputTypeEmail" v-bind:value="inputEmai" v-bind:placeholder="inputTypeEmail" />
+             <br /><br />
+
+            <button v-bind:type="submitBtn">{{ submitBtn }}</button>
+        </form>
+
+        <div v-html="htmlControl"><div> <!-- content control in the Vue js -->
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#data-binding",
+            data: {
+                Name: "Online lerning Vue JS",
+                title: "Click here...",
+                link: "https://www.youtube.com/watch?v=BqCaoGuRDC4",
+                imgSrc: "https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg",
+                IsActiveFalse: false,
+                IsActveTrue: true,
+                inputTypeText: "input",
+                inputTypeEmail: "email",
+                inputName: "Deepesh Kumar",
+                inputEmai: "deepesh@gmail.com",
+                submitBtn: "submit",
+                htmlControl: "<h2> This content has converted into the Vue JS </h2>"
+            },
+        })
+    </script>
+
+</body>
+
+</html>
