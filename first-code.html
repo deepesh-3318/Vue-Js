@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Start the VueJS Learning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+</head>
+<body>
+    
+    <div id="message">
+        My Name is <b>{{fname}} {{lname}}</b> And {{message}}
+    </div>
+    
+    
+    <script>
+        new Vue ({
+            el: "#message",
+            data :{
+                fname: "Deepesh Kumar",
+                lname: "Yogi",
+                message: "Now, I'm ready to flying in Vue JS framwork",
+
+            }
+        });
+    </script>
+    <!-- <script src='main.js'></script> -->
+</body>
+</html>
