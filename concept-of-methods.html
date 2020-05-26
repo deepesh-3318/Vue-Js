@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Start the VueJS Learning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+</head>
+<body>
+    
+    <div id="myApp">
+        <h3>
+           My Name is: {{name}} and I'm working in: {{Work}}
+        </h3> 
+        <p>
+            {{
+               run(' Developer ', 'In India') 
+            }}
+        </p>
+
+        <p>
+            {{ welcome('Morning',' Deepesh ') }}
+        </p>
+
+        <p>
+
+            {{ valueAccess('Welcome ') }}
+
+        </p>
+    </div>
+    
+    
+    <script>
+       var myApp = new Vue ({
+           el: "#myApp",
+           data: {
+               name: 'Deepesh',
+               Work: 'Jaipur',
+               location: 'In Your Office'
+           },
+           methods: {
+               run : function (message,countryName) {
+                   return 'I want to de Good' + message + countryName
+               },
+               welcome: function(timeDay, userName) {
+                   return "Good " + timeDay + userName;
+               },
+               valueAccess: function (gratting) {
+                   return gratting + this.name + " " + this.location + " " + this.Work;
+               }
+               
+           },
+       });
+    </script>
+    <!-- <script src='main.js'></script> -->
+</body>
+</html>
