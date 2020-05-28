@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Start the VueJS Learning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .fixedsize img {
+            width: 200px;
+        }
+    </style>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+</head>
+
+<body>
+
+    <div id="event-handling">
+        <h3>
+           <h3>Counter : {{ counter }} </h3> 
+        </h3>
+
+        <button v-bind:type="btntype" v-on:click="increment(1)" v-bind:name="btntype">Incremenr by 1</button>
+        <button v-bind:type="btntype" v-on:click="decrement(1)" v-bind:name="btntype">Decrement by 1</button>
+
+
+         <button v-bind:type="btntype" v-on:dblclick="increment(10)" v-bind:name="btntype">Incremenr by 10</button>
+            <button v-bind:type="btntype" v-on:dblclick="decrement(10)" v-bind:name="btntype">Decrement by 10</button>
+    </div>
+
+
+
+
+    <script>
+        var myapp = new Vue({
+            el: "#event-handling",
+            data: {
+                btntype: "button",
+                counter:0,
+            },
+            methods: {
+                increment: function (add) {
+                    this.counter += add
+                },
+                decrement: function (remo) {
+                    this.counter -= remo
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
