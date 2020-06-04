@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Start the VueJS Learning</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .event-box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+</head>
+
+<body>
+
+  <div id="event-modifier">
+    <h3>
+        Counter: {{counter}}
+    </h3>
+    <button type="button" v-on:click.once="incrementbyone">increment</button> <!-- (.once) this function work only one time -->
+<br><br><br>
+    <a href="google.com" @click.prevent>
+        Google.com
+    </a>
+<br><br><br>
+    <form method="POST" action="#" @click.prevent="preventfun"> <!-- (.prevent) This funcation changed the default flow behavir -->
+        <input type="text">
+        <button type="submit" >Submit</button>
+    </form>
+    <br><br><br>
+
+    <div class="" @click="parentrun" id="parentDiv"> <!-- (.stop) This funcation run only on child box -->
+        <div id="childDiv" @click.stop="childrun">
+            <h3>STOP funcation demo</h3>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div id="" @click.capture="parentfucation" style="min-height: 100px;">
+
+        <button type="button" @click="childfuncation">
+            Click Me
+        </button>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+      var myapp = new Vue({
+          el: "#event-modifier",
+          data: {
+              counter : 0,
+          },
+          methods: {
+              incrementbyone : function () {
+                  this.counter ++
+              },
+              preventfun : function () {
+                  console.log("it's working");
+              },
+              parentrun : function () {
+                  console.log("this is parent div ");
+              },
+              childrun : function () {
+                  console.log("this is child div");
+              },
+              parentfucation : function () {
+                  console.log("this is parent box area");
+              },
+              childfuncation : function () {
+                  console.log("this is child box area");
+              },
+          },
+
+      });
+  </script>
+</body>
+
+</html>
